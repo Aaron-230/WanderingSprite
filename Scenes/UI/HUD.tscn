@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bsk0xpxbcygr2"]
+
+[node name="HUD" type="CanvasLayer" unique_id=568914957]
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=637241046]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Health" type="TextureProgressBar" parent="Container" unique_id=324545088]
+layout_mode = 2

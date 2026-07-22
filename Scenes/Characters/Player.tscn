@@ -51,6 +51,22 @@ region = Rect2(64, 256, 32, 32)
 atlas = ExtResource("1_gjot8")
 region = Rect2(96, 256, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_24667"]
+atlas = ExtResource("1_gjot8")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qet4"]
+atlas = ExtResource("1_gjot8")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl32u"]
+atlas = ExtResource("1_gjot8")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2v5d"]
+atlas = ExtResource("1_gjot8")
+region = Rect2(96, 288, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_aal88"]
 atlas = ExtResource("1_gjot8")
 region = Rect2(0, 0, 32, 32)
@@ -250,6 +266,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_24667")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qet4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl32u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2v5d")
+}],
+"loop": false,
+"name": &"Dying",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_aal88")
 }, {
 "duration": 1.0,
@@ -387,12 +420,33 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5en2"]
+size = Vector2(10, 15.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0el0d"]
+size = Vector2(15, 15)
+
 [node name="Player" type="CharacterBody2D" unique_id=1229437809]
 scale = Vector2(4, 4)
 script = ExtResource("1_0el0d")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1754202480]
 sprite_frames = SubResource("SpriteFrames_24667")
-animation = &"AttackDown"
+animation = &"Dying"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=472259934]
+position = Vector2(0.25, -0.125)
+shape = SubResource("RectangleShape2D_o5en2")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=794726643]
+position = Vector2(7.5, -0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1884754295]
+shape = SubResource("RectangleShape2D_0el0d")
+
+[node name="DamageCooldown" type="Timer" parent="." unique_id=1593401285]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

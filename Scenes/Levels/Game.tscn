@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d4l8me87sorgn"]
+
+[ext_resource type="Script" uid="uid://cv33e65byesct" path="res://Scripts/Game.gd" id="1_4n16r"]
+[ext_resource type="PackedScene" uid="uid://dekqeo6oxjhd6" path="res://Scenes/Levels/Level-2.tscn" id="1_laimj"]
+
+[node name="Game" type="Node2D" unique_id=261594707]
+script = ExtResource("1_4n16r")
+
+[node name="Level" parent="." unique_id=1188474675 instance=ExtResource("1_laimj")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=295750753]
