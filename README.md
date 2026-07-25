@@ -1,6 +1,6 @@
 # Wandering Sprite
 
-Soul Awakening is a 2D, Pixelated, Top-Down Game where the Main Character "The Boy" just wants to explore the world and you can to using the levels of the games and visit the Forgotten Plains, The Abandoned City and many more. Feel Free to try out this game and leave your reviews!
+Wandering Sprite is a 2D, Pixelated, Top-Down Game where the Main Character "The Boy" just wants to explore the world and you can to using the levels of the games and visit the Forgotten Plains, The Abandoned City and many more. Feel Free to try out this game and leave your reviews!
 
 This Game has both PC and Mobile Control Support. The Keyboard Controls are given below:
 
