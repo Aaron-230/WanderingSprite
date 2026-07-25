@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://djs5kc01k1jjd" path="res://Assets/Tilemaps/Pixel Plains/New Basic Tiles Free.png" id="1_i22fo"]
 [ext_resource type="Texture2D" uid="uid://cmugdvofegd7j" path="res://Assets/Tilemaps/Pixel Plains/Trees and bushes.png" id="2_nxq7m"]
 [ext_resource type="PackedScene" uid="uid://cnlja5vkhc7en" path="res://Scenes/Characters/Player.tscn" id="3_nxq7m"]
+[ext_resource type="AudioStream" uid="uid://t5ufmyru22gc" path="res://Assets/Music/Level-4.mp3" id="4_qsed2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsed2"]
 texture = ExtResource("1_i22fo")
@@ -388,3 +389,7 @@ position = Vector2(7063, -1160)
 
 [node name="Shape" type="CollisionShape2D" parent="Exit" unique_id=144642729]
 shape = SubResource("RectangleShape2D_nxq7m")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1812518971]
+stream = ExtResource("4_qsed2")
+autoplay = true

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://da8hykggvjvnh"]
+
+[ext_resource type="Script" uid="uid://dcug3rn6f0an8" path="res://Scripts/HomeScreen.gd" id="1_omcil"]
+[ext_resource type="VideoStream" uid="uid://s7obgluhf0us" path="res://Assets/UI/Videos/Background.ogv" id="2_8v0yj"]
+[ext_resource type="Texture2D" uid="uid://cr20qb300vygn" path="res://Assets/Logo.png" id="3_wityu"]
+[ext_resource type="FontFile" uid="uid://dpmbw8v8mgxjo" path="res://Assets/UI/BoldPixels/boldpixels.ttf" id="4_58jeh"]
+[ext_resource type="AudioStream" uid="uid://btrdb7edtosx3" path="res://Assets/Music/Start Menu.ogg" id="5_vu4uo"]
+
+[node name="EndScreen" type="Control" unique_id=1302991333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_omcil")
+
+[node name="BG Video" type="VideoStreamPlayer" parent="." unique_id=1723230150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_8v0yj")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1677072849]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="Panel" unique_id=845026252]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -12.0
+offset_right = 4.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="Panel/Container" unique_id=66779288]
+layout_mode = 2
+texture = ExtResource("3_wityu")
+
+[node name="Exit" type="Button" parent="Panel/Container" unique_id=2134190209]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_58jeh")
+theme_override_font_sizes/font_size = 64
+text = "Exit"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=860094755]
+stream = ExtResource("5_vu4uo")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="pressed" from="Panel/Container/Exit" to="." method="_on_exit_pressed"]

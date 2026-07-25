@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnmx81satq14d" path="res://Assets/Tilemaps/Woods/free_pixel_16_woods.png" id="1_anlns"]
 [ext_resource type="PackedScene" uid="uid://cnlja5vkhc7en" path="res://Scenes/Characters/Player.tscn" id="2_2r5c8"]
+[ext_resource type="AudioStream" uid="uid://c2if6t88rvq8d" path="res://Assets/Music/Level-5.mp3" id="3_ukq6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2r5c8"]
 texture = ExtResource("1_anlns")
@@ -219,3 +220,7 @@ position = Vector2(15455, -3265)
 
 [node name="Shape" type="CollisionShape2D" parent="Exit" unique_id=758982595]
 shape = SubResource("RectangleShape2D_2r5c8")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1476569858]
+stream = ExtResource("3_ukq6d")
+autoplay = true

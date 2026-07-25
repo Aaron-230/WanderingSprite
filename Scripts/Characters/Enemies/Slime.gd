@@ -18,6 +18,7 @@ func _physics_process(delta: float):
 func Attack(delta: float):
 	var Direction := (Target.position - position).normalized()
 	position += Direction * SPEED * delta
+	Sprite.play("Attack")
 
 func takeDamage(amount: int, attackerPosition: Vector2):
 	Health -= amount

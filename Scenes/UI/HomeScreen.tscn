@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cv1hfe6tyqkus"]
+
+[ext_resource type="VideoStream" uid="uid://s7obgluhf0us" path="res://Assets/UI/Videos/Background.ogv" id="1_qfqm7"]
+[ext_resource type="Script" uid="uid://dcug3rn6f0an8" path="res://Scripts/HomeScreen.gd" id="1_tto1b"]
+[ext_resource type="FontFile" uid="uid://dpmbw8v8mgxjo" path="res://Assets/UI/BoldPixels/boldpixels.ttf" id="2_tto1b"]
+[ext_resource type="Texture2D" uid="uid://cr20qb300vygn" path="res://Assets/Logo.png" id="3_gef8g"]
+[ext_resource type="AudioStream" uid="uid://btrdb7edtosx3" path="res://Assets/Music/Start Menu.ogg" id="4_372cc"]
+
+[node name="Home Screen" type="Control" unique_id=1302991333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tto1b")
+nextScene = "uid://d4l8me87sorgn"
+
+[node name="BG Video" type="VideoStreamPlayer" parent="." unique_id=1723230150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_qfqm7")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1677072849]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="Panel" unique_id=845026252]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -12.0
+offset_right = 4.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="Panel/Container" unique_id=66779288]
+layout_mode = 2
+texture = ExtResource("3_gef8g")
+
+[node name="Start" type="Button" parent="Panel/Container" unique_id=911563570]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tto1b")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="Exit" type="Button" parent="Panel/Container" unique_id=2134190209]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tto1b")
+theme_override_font_sizes/font_size = 64
+text = "Exit"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=860094755]
+stream = ExtResource("4_372cc")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="pressed" from="Panel/Container/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/Container/Exit" to="." method="_on_exit_pressed"]

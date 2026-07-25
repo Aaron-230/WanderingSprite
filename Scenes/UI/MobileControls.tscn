@@ -1,3 +1,95 @@
 [gd_scene format=3 uid="uid://cqd4becef2mhm"]
 
+[ext_resource type="Texture2D" uid="uid://61ofm8yykxqr" path="res://Assets/UI/Controllers and Keyboard/kb_dark_symbols.png" id="1_px07r"]
+[ext_resource type="Script" uid="uid://cfrrk1pgff0m6" path="res://Scripts/MobileControls.gd" id="1_vbx0m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px07r"]
+atlas = ExtResource("1_px07r")
+region = Rect2(64, 208, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2fqq"]
+atlas = ExtResource("1_px07r")
+region = Rect2(96, 209, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxu5g"]
+atlas = ExtResource("1_px07r")
+region = Rect2(64, 192, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adtlg"]
+atlas = ExtResource("1_px07r")
+region = Rect2(96, 193, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbx0m"]
+atlas = ExtResource("1_px07r")
+region = Rect2(64, 224, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6h4v"]
+atlas = ExtResource("1_px07r")
+region = Rect2(96, 225, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7kev"]
+atlas = ExtResource("1_px07r")
+region = Rect2(64, 240, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scg6o"]
+atlas = ExtResource("1_px07r")
+region = Rect2(96, 241, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xst5"]
+atlas = ExtResource("1_px07r")
+region = Rect2(0, 320, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65ek1"]
+atlas = ExtResource("1_px07r")
+region = Rect2(32, 321, 15, 15)
+
 [node name="MobileControls" type="CanvasLayer" unique_id=2143979936]
+script = ExtResource("1_vbx0m")
+
+[node name="EW" type="HBoxContainer" parent="." unique_id=1980008925]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -133.0
+offset_right = -84.0
+offset_bottom = -93.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(8, 8)
+
+[node name="Left" type="TouchScreenButton" parent="EW" unique_id=1437150786]
+position = Vector2(-20.999998, 1.0000007)
+texture_normal = SubResource("AtlasTexture_px07r")
+texture_pressed = SubResource("AtlasTexture_w2fqq")
+action = "Left"
+
+[node name="NS" type="VBoxContainer" parent="EW" unique_id=1340824613]
+layout_mode = 2
+
+[node name="Up" type="TouchScreenButton" parent="EW/NS" unique_id=1704413486]
+position = Vector2(-9.999998, -11.999999)
+texture_normal = SubResource("AtlasTexture_cxu5g")
+texture_pressed = SubResource("AtlasTexture_adtlg")
+action = "Up"
+
+[node name="Down" type="TouchScreenButton" parent="EW/NS" unique_id=1584922887]
+position = Vector2(-9.999998, 1.0000007)
+texture_normal = SubResource("AtlasTexture_vbx0m")
+texture_pressed = SubResource("AtlasTexture_q6h4v")
+action = "Down"
+
+[node name="Right" type="TouchScreenButton" parent="EW" unique_id=1532432315]
+position = Vector2(1.0000023, 1.0000007)
+texture_normal = SubResource("AtlasTexture_t7kev")
+texture_pressed = SubResource("AtlasTexture_scg6o")
+action = "Right"
+
+[node name="Attack" type="TouchScreenButton" parent="." unique_id=86936141]
+position = Vector2(0, 600)
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_5xst5")
+texture_pressed = SubResource("AtlasTexture_65ek1")
+action = "Attack"

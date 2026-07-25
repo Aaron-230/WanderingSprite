@@ -1,6 +1,6 @@
 extends Node2D
 
-var Level = 2
+var Level = 1
 
 var currentLevel: Node2D = null
 

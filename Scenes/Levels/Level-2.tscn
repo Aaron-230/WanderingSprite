@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://db7j07jkfigj1" path="res://Assets/Tilemaps/Tiles/Outdoor decoration/Oak_Tree.png" id="7_8r5np"]
 [ext_resource type="PackedScene" uid="uid://cnlja5vkhc7en" path="res://Scenes/Characters/Player.tscn" id="7_t07gs"]
 [ext_resource type="PackedScene" uid="uid://bxrn648fki2aa" path="res://Scenes/Characters/Enemies/Slime.tscn" id="9_lnb5r"]
+[ext_resource type="AudioStream" uid="uid://b22gdcon8erak" path="res://Assets/Music/Level-2.mp3" id="10_83jt6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hdhp"]
 texture = ExtResource("1_oripj")
@@ -204,8 +205,18 @@ limit_right = 4400
 [node name="Slime" parent="Enemies" unique_id=893487073 instance=ExtResource("9_lnb5r")]
 position = Vector2(3378, -159)
 
+[node name="Slime2" parent="Enemies" unique_id=1397114656 instance=ExtResource("9_lnb5r")]
+position = Vector2(447, -192)
+
+[node name="Slime3" parent="Enemies" unique_id=642017519 instance=ExtResource("9_lnb5r")]
+position = Vector2(3577, -2058)
+
 [node name="Exit" type="Area2D" parent="." unique_id=862730635]
 position = Vector2(4448, -1920)
 
 [node name="Shape" type="CollisionShape2D" parent="Exit" unique_id=36241639]
 shape = SubResource("RectangleShape2D_wgrye")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=528672281]
+stream = ExtResource("10_83jt6")
+autoplay = true
