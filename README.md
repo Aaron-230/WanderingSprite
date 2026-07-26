@@ -2,6 +2,8 @@
 
 Wandering Sprite is a 2D, Pixelated, Top-Down Game where the Main Character "The Boy" just wants to explore the world and you can to using the levels of the games and visit the Forgotten Plains, The Abandoned City and many more. Feel Free to try out this game and leave your reviews!
 
+I watched this [Tutorial](https://youtube.com/playlist?list=PLjcN1EyupaQkpgVN3CEeaetxxCrxo4F7v&si=k5I6lPxpMjFvzSYu) to learn the basics and added levels, mobile control and other important features!
+
 This Game has both PC and Mobile Control Support. The Keyboard Controls are given below:
 
 'W' - Move Up
